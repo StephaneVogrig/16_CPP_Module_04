@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/02 18:55:40 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:22:58 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Dog : public Animal
 	public:
 
 		Dog(void);
-		Dog(const Dog & Dog);
+		Dog(const Dog & toCopy);
 
 		~Dog(void);
 
-		Dog & operator = (const Dog & Dog);
+		Dog & operator = (const Dog & toAssign);
 
 		void makeSound(void) const;
 

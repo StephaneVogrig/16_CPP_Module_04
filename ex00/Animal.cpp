@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 14:45:41 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:30:26 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ Animal::~Animal(void)
 
 /* operator ------------------------------------------------------------------*/
 
-Animal & Animal::operator = (const Animal & newAnimal)
+Animal & Animal::operator = (const Animal & toAssign)
 {
-	std::cout << PURPLE "Animal copy assignment operator called " RESET << *this << std::endl;
-	if (this == &newAnimal)
+	std::cout << PURPLE "Animal assignment operator called " RESET << *this << std::endl;
+	if (this == &toAssign)
 		return (*this);
-	_type = newAnimal._type;
+	_type = toAssign._type;
 	return (*this);
 }
 
@@ -51,6 +51,8 @@ std::ostream & operator << (std::ostream & os, const Animal & animal)
 	os << YELLOW "animal type:" RESET << animal.getType();
 	return (os);
 }
+
+/* getter --------------------------------------------------------------------*/
 
 std::string Animal::getType(void) const
 {

@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 14:43:44 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:23:42 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ WrongAnimal::~WrongAnimal(void)
 
 /* operator ------------------------------------------------------------------*/
 
-WrongAnimal & WrongAnimal::operator = (const WrongAnimal & newWrongAnimal)
+WrongAnimal & WrongAnimal::operator = (const WrongAnimal & toAssign)
 {
 	std::cout << PURPLE "WrongAnimal copy assignment operator called " RESET << *this << std::endl;
-	if (this == &newWrongAnimal)
+	if (this == &toAssign)
 		return (*this);
-	_type = newWrongAnimal._type;
+	_type = toAssign._type;
 	return (*this);
 }
 

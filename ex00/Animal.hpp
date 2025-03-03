@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/02 23:22:56 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:20:43 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class Animal
 	public:
 
 		Animal(void);
-		Animal(const Animal & animal);
+		Animal(const Animal & toCopy);
 
 		virtual ~Animal(void);
 
-		Animal & operator = (const Animal & animal);
+		Animal & operator = (const Animal & toAssign);
 
 		std::string getType(void) const;
 

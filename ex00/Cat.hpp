@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/02 18:57:08 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:22:29 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Cat : public Animal
 	public:
 
 		Cat(void);
-		Cat(const Cat & Cat);
+		Cat(const Cat & toCopy);
 
 		~Cat(void);
 
-		Cat & operator = (const Cat & Cat);
+		Cat & operator = (const Cat & toAssign);
 
 		void makeSound(void) const;
 

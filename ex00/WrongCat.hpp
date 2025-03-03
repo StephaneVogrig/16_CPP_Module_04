@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/02 23:44:56 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:23:27 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class WrongCat : public WrongAnimal
 	public:
 
 		WrongCat(void);
-		WrongCat(const WrongCat & wrongCat);
+		WrongCat(const WrongCat & toCopy);
 
 		~WrongCat(void);
 
-		WrongCat & operator = (const WrongCat & wrongCat);
+		WrongCat & operator = (const WrongCat & toAssign);
 
 		void makeSound(void) const;
 

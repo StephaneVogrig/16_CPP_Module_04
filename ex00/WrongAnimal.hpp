@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/02 23:33:50 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/03 15:23:10 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class WrongAnimal
 	public:
 
 		WrongAnimal(void);
-		WrongAnimal(const WrongAnimal & wrongAnimal);
+		WrongAnimal(const WrongAnimal & toCopy);
 
 		virtual ~WrongAnimal(void);
 
-		WrongAnimal & operator = (const WrongAnimal & wrongAnimal);
+		WrongAnimal & operator = (const WrongAnimal & toAssign);
 
 		std::string getType(void) const;
 

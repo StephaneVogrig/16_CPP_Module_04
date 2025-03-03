@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 15:22:29 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:45:36 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <string>
 # include "Animal.hpp"
-# include "display.hpp"
+# include "utils.hpp"
 
 class Cat : public Animal
 {
@@ -31,8 +31,8 @@ class Cat : public Animal
 
 		void makeSound(void) const;
 
-};
+		static void test(void);
 
-void testCat(void);
+};
 
 #endif

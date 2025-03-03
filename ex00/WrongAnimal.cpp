@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 15:23:42 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:49:32 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,26 +66,26 @@ void WrongAnimal::makeSound(void) const
 
 /* test ----------------------------------------------------------------------*/
 
-void testWrongAnimal_constructor(void)
+static void test_constructor(void)
 {
 	displaySubtest("default constructor");
 	WrongAnimal wrongAnimal;
 }
 
-void testWrongAnimal_new(void)
+static void test_new(void)
 {
 	displaySubtest("new");
 	WrongAnimal * heap = new WrongAnimal();
 	delete heap;
 }
 
-void testWrongAnimal_array(void)
+static void test_array(void)
 {
 	displaySubtest("Array");
-	WrongAnimal trap[5];
+	WrongAnimal array[5];
 }
 
-void testWrongAnimal_copy(void)
+static void test_copy(void)
 {
 	displaySubtest("copy constructor");
 
@@ -106,18 +106,20 @@ void testWrongAnimal_copy(void)
 	std::cout << std::endl;
 }
 
-void testWrongAnimal_makeSound(void)
+static void test_makeSound(void)
 {
 	displaySubtest("make sound");
 	WrongAnimal wrongAnimal;
 	wrongAnimal.makeSound();
 }
 
-void testWrongAnimal(void)
+void WrongAnimal::test(void)
 {
-	testWrongAnimal_constructor();
-	testWrongAnimal_new();
-	testWrongAnimal_array();
-	testWrongAnimal_copy();
-	testWrongAnimal_makeSound();
+	displaySection("test WrongAnimal");
+
+	test_constructor();
+	test_new();
+	test_array();
+	test_copy();
+	test_makeSound();
 }

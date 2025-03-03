@@ -50,26 +50,26 @@ void WrongCat::makeSound(void) const
 
 /* test ----------------------------------------------------------------------*/
 
-void testWrongCat_constructor(void)
+static void test_constructor(void)
 {
 	displaySubtest("default constructor");
 	WrongCat WrongCat;
 }
 
-void testWrongCat_new(void)
+static void test_new(void)
 {
 	displaySubtest("new");
 	WrongCat * heap = new WrongCat();
 	delete heap;
 }
 
-void testWrongCat_array(void)
+static void test_array(void)
 {
 	displaySubtest("Array");
-	WrongCat trap[5];
+	WrongCat array[5];
 }
 
-void testWrongCat_copy(void)
+static void test_copy(void)
 {
 	displaySubtest("copy constructor");
 
@@ -90,9 +90,22 @@ void testWrongCat_copy(void)
 	std::cout << std::endl;
 }
 
-void testWrongCat_virtual(void)
+static void test_makeSound(void)
+{
+	displaySubtest("make sound");
+	WrongCat wrongCat;
+	wrongCat.makeSound();
+}
+
+static void test_virtual(void)
 {
 	displaySubtest("virtual");
+
+	WrongAnimal * animalVirtual = new WrongCat();
+	animalVirtual->makeSound();
+	delete animalVirtual;
+
+	std::cout << std::endl;
 	WrongAnimal wrongAnimal;
 	WrongCat wrongCat;
 
@@ -115,19 +128,14 @@ void testWrongCat_virtual(void)
 	wrongCatRef.makeSound();
 }
 
-void testWrongCat_makeSound(void)
+void WrongCat::test(void)
 {
-	displaySubtest("make sound");
-	WrongCat wrongCat;
-	wrongCat.makeSound();
-}
+	displaySection("test WrongCat");
 
-void testWrongCat(void)
-{
-	testWrongCat_constructor();
-	testWrongCat_new();
-	testWrongCat_array();
-	testWrongCat_copy();
-	testWrongCat_virtual();
-	testWrongCat_makeSound();
+	test_constructor();
+	test_new();
+	test_array();
+	test_copy();
+	test_makeSound();
+	test_virtual();
 }

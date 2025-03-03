@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 15:20:43 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:45:31 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include <iostream>
 # include <string>
-# include "display.hpp"
+# include "utils.hpp"
 
 class Animal
 {
 	public:
 
-		Animal(void);
+		Animal(const std::string & type = "animal");
 		Animal(const Animal & toCopy);
 
 		virtual ~Animal(void);
@@ -32,6 +32,8 @@ class Animal
 
 		virtual void makeSound(void) const;
 
+		static void test(void);
+
 	protected:
 
 		std::string _type;
@@ -39,7 +41,5 @@ class Animal
 };
 
 std::ostream & operator << (std::ostream & os, const Animal & animal);
-
-void testAnimal(void);
 
 #endif

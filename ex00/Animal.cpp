@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 15:30:26 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:47:47 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-Animal::Animal(void) : _type("animal")
+Animal::Animal(const std::string & type) : _type(type)
 {
 	std::cout << CYAN "Animal default constructor called : " RESET;
 	std::cout << *this << CYAN " is created " RESET << std::endl;
@@ -68,26 +68,26 @@ void Animal::makeSound(void) const
 
 /* test ----------------------------------------------------------------------*/
 
-void testAnimal_constructor(void)
+static void test_constructor(void)
 {
 	displaySubtest("default constructor");
 	Animal animal;
 }
 
-void testAnimal_new(void)
+static void test_new(void)
 {
 	displaySubtest("new");
 	Animal * heap = new Animal();
 	delete heap;
 }
 
-void testAnimal_array(void)
+static void test_array(void)
 {
 	displaySubtest("Array");
-	Animal trap[5];
+	Animal array[5];
 }
 
-void testAnimal_copy(void)
+static void test_copy(void)
 {
 	displaySubtest("copy constructor");
 
@@ -108,18 +108,20 @@ void testAnimal_copy(void)
 	std::cout << std::endl;
 }
 
-void testAnimal_makeSound(void)
+static void test_makeSound(void)
 {
 	displaySubtest("make sound");
 	Animal animal;
 	animal.makeSound();
 }
 
-void testAnimal(void)
+void Animal::test(void)
 {
-	testAnimal_constructor();
-	testAnimal_new();
-	testAnimal_array();
-	testAnimal_copy();
-	testAnimal_makeSound();
+	displaySection("test Animal");
+
+	test_constructor();
+	test_new();
+	test_array();
+	test_copy();
+	test_makeSound();
 }

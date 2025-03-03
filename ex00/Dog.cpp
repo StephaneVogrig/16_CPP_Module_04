@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 14:46:06 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:49:15 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("dog")
 {
-	std::cout << CYAN "Dog default constructor called : " RESET;
-	_type = "dog";
-	std::cout << *this << CYAN " is created " RESET << std::endl;
+	std::cout << CYAN "Dog default constructor called : " RESET << *this << std::endl;
 }
 
 Dog::Dog(const Dog & toCopy) : Animal(toCopy)
@@ -51,26 +49,38 @@ void Dog::makeSound(void) const
 
 /* test ----------------------------------------------------------------------*/
 
-void testDog_constructor(void)
+static void test_constructor(void)
 {
 	displaySubtest("default constructor");
 	Dog Dog;
 }
 
-void testDog_new(void)
+static void test_new(void)
 {
 	displaySubtest("new");
 	Dog * heap = new Dog();
 	delete heap;
 }
 
-void testDog_array(void)
+static void test_array(void)
 {
 	displaySubtest("Array");
-	Dog trap[5];
+
+	Dog * arrayPtr[5];
+	for (int i = 0; i < 5; ++i)
+		arrayPtr[i] = new Dog();
+	for (int i = 0; i < 5; ++i)
+		arrayPtr[i]->makeSound();
+	for (int i = 0; i < 5; ++i)
+		delete arrayPtr[i];
+
+	std::cout << std::endl;
+	Dog array[5];
+	for (int i = 0; i < 5; ++i)
+		array[i].makeSound();
 }
 
-void testDog_copy(void)
+static void test_copy(void)
 {
 	displaySubtest("copy constructor");
 
@@ -91,9 +101,22 @@ void testDog_copy(void)
 	std::cout << std::endl;
 }
 
-void testDog_virtual(void)
+static void test_makeSound(void)
+{
+	displaySubtest("make sound");
+	Dog Dog;
+	Dog.makeSound();
+}
+
+static void test_virtual(void)
 {
 	displaySubtest("virtual");
+
+	Animal * animalVirtual = new Dog();
+	animalVirtual->makeSound();
+	delete animalVirtual;
+
+	std::cout << std::endl;
 	Animal animal;
 	Dog dog;
 
@@ -117,20 +140,14 @@ void testDog_virtual(void)
 
 }
 
-
-void testDog_makeSound(void)
+void Dog::test(void)
 {
-	displaySubtest("make sound");
-	Dog Dog;
-	Dog.makeSound();
-}
+	displaySection("test Dog");
 
-void testDog(void)
-{
-	testDog_constructor();
-	testDog_new();
-	testDog_array();
-	testDog_copy();
-	testDog_virtual();
-	testDog_makeSound();
+	test_constructor();
+	test_new();
+	test_array();
+	test_copy();
+	test_makeSound();
+	test_virtual();
 }

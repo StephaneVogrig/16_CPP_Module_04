@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/02 19:18:47 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:48:40 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal("cat")
 {
 	std::cout << CYAN "Cat default constructor called : " RESET << *this << std::endl;
-	_type = "cat";
 }
 
 Cat::Cat(const Cat & toCopy) : Animal(toCopy)
@@ -50,26 +49,38 @@ void Cat::makeSound(void) const
 
 /* test ----------------------------------------------------------------------*/
 
-void testCat_constructor(void)
+static void test_constructor(void)
 {
 	displaySubtest("default constructor");
 	Cat Cat;
 }
 
-void testCat_new(void)
+static void test_new(void)
 {
 	displaySubtest("new");
 	Cat * heap = new Cat();
 	delete heap;
 }
 
-void testCat_array(void)
+static void test_array(void)
 {
 	displaySubtest("Array");
-	Cat trap[5];
+
+	Cat * arrayPtr[5];
+	for (int i = 0; i < 5; ++i)
+		arrayPtr[i] = new Cat();
+	for (int i = 0; i < 5; ++i)
+		arrayPtr[i]->makeSound();
+	for (int i = 0; i < 5; ++i)
+		delete arrayPtr[i];
+
+	std::cout << std::endl;
+	Cat array[5];
+	for (int i = 0; i < 5; ++i)
+		array[i].makeSound();
 }
 
-void testCat_copy(void)
+static void test_copy(void)
 {
 	displaySubtest("copy constructor");
 
@@ -90,9 +101,22 @@ void testCat_copy(void)
 	std::cout << std::endl;
 }
 
-void testCat_virtual(void)
+static void test_makeSound(void)
+{
+	displaySubtest("make sound");
+	Cat Cat;
+	Cat.makeSound();
+}
+
+static void test_virtual(void)
 {
 	displaySubtest("virtual");
+
+	Animal * animalVirtual = new Cat();
+	animalVirtual->makeSound();
+	delete animalVirtual;
+
+	std::cout << std::endl;
 	Animal animal;
 	Cat cat;
 
@@ -113,23 +137,16 @@ void testCat_virtual(void)
 	std::cout << std::endl;
 	animalRef.makeSound();
 	catRef.makeSound();
-
 }
 
-
-void testCat_makeSound(void)
+void Cat::test(void)
 {
-	displaySubtest("make sound");
-	Cat Cat;
-	Cat.makeSound();
-}
+	displaySection("test Cat");
 
-void testCat(void)
-{
-	testCat_constructor();
-	testCat_new();
-	testCat_array();
-	testCat_copy();
-	testCat_virtual();
-	testCat_makeSound();
+	test_constructor();
+	test_new();
+	test_array();
+	test_copy();
+	test_makeSound();
+	test_virtual();
 }

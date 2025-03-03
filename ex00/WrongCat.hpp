@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 15:23:27 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:45:46 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <string>
 # include "WrongAnimal.hpp"
-# include "display.hpp"
+# include "utils.hpp"
 
 class WrongCat : public WrongAnimal
 {
@@ -30,6 +30,8 @@ class WrongCat : public WrongAnimal
 		WrongCat & operator = (const WrongCat & toAssign);
 
 		void makeSound(void) const;
+
+		static void test(void);
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:44:07 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/03 14:46:54 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 00:50:34 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-#include "display.hpp"
+#include "utils.hpp"
 
 void test42(void)
 {
+	displaySection("test 42");
+
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -36,6 +38,8 @@ void test42(void)
 
 void test42Wrong(void)
 {
+	displaySection("test 42 Wrong");
+
 	const WrongAnimal* meta = new WrongAnimal();
 	const Animal* j = new Dog();
 	const WrongAnimal* i = new WrongCat();
@@ -52,26 +56,13 @@ void test42Wrong(void)
 
 int main(void)
 {
-	displaySection("test 42");
 	test42();
-
-	displaySection("test 42 Wrong");
 	test42Wrong();
-
-	displaySection("test Animal");
-	testAnimal();
-
-	displaySection("test Dog");
-	testDog();
-
-	displaySection("test Cat");
-	testCat();
-
-	displaySection("test WrongAnimal");
-	testWrongAnimal();
-
-	displaySection("test WrongCat");
-	testWrongCat();
+	Animal::test();
+	Dog::test();
+	Cat::test();
+	WrongAnimal::test();
+	WrongCat::test();
 
 	return (EXIT_SUCCESS);
 }

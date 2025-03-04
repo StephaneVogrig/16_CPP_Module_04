@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:33:19 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 19:11:08 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog::~Dog(void)
 
 Dog & Dog::operator = (const Dog & toAssign)
 {
-	std::cout << PURPLE "Dog copy assignment operator called " RESET << *this << std::endl;
+	std::cout << PURPLE "Dog assignment operator called " RESET << *this << std::endl;
 	Animal::operator = (toAssign);
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:26:02 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 18:26:41 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 19:15:11 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void test_copy(void)
 	T * original = new T();
 
 	std::cout << std::endl;
-	std::cout << YELLOW "Create copy" RESET << std::endl;
+	std::cout << YELLOW "Create by copy" RESET << std::endl;
 	T copy(*original);
 
 	std::cout << std::endl;

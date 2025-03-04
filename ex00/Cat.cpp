@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:36:31 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 19:11:03 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Cat::~Cat(void)
 
 Cat & Cat::operator = (const Cat & toAssign)
 {
-	std::cout << PURPLE "Cat copy assignment operator called " RESET << *this << std::endl;
+	std::cout << PURPLE "Cat assignment operator called " RESET << *this << std::endl;
 	Animal::operator = (toAssign);
 	return (*this);
 }

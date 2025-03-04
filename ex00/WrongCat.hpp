@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 00:45:46 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 15:47:40 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define WRONGCAT_HPP
 
 # include <iostream>
-# include <string>
 # include "WrongAnimal.hpp"
 # include "utils.hpp"
 
@@ -31,10 +30,6 @@ class WrongCat : public WrongAnimal
 
 		void makeSound(void) const;
 
-		static void test(void);
-
 };
-
-void testWrongCat(void);
 
 #endif

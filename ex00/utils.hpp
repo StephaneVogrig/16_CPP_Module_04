@@ -6,12 +6,12 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 19:29:35 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 01:31:34 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 15:51:54 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DISPLAY_HPP
-# define DISPLAY_HPP
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
 #include <iostream>
 #include <string>
@@ -33,6 +33,10 @@ template <typename T>
 void test_constructor(void)
 {
 	displaySubtest("default constructor");
+
+	T * heap = new T();
+	delete heap;
+	std::cout << std::endl;
 
 	T object;
 }
@@ -92,45 +96,45 @@ void test_makeSound(void)
 {
 	displaySubtest("make sound");
 
-	T * animalPtr = new T();
-	animalPtr->makeSound();
-	delete animalPtr;
+	T * instancePtr = new T();
+	instancePtr->makeSound();
+	delete instancePtr;
 
 	std::cout << std::endl;
-	T animal;
-	animal.makeSound();
+	T instance;
+	instance.makeSound();
 }
 
-template <typename S, typename T>
+template <typename Animal, typename Child>
 void test_virtual(void)
 {
 	displaySubtest("virtual");
 
-	S * animalVirtual = new T();
-	animalVirtual->makeSound();
-	delete animalVirtual;
+	Animal * animalBase = new Child();
+	animalBase->makeSound();
+	delete animalBase;
 
 	std::cout << std::endl;
-	S animal;
-	T dog;
+	Animal animal;
+	Child child;
 
 	std::cout << std::endl;
 	std::cout << YELLOW "pointer" RESET << std::endl;
-	S * animalPtr = &animal;
-	S * dogPtr = &dog;
+	Animal * animalPtr = &animal;
+	Animal * childPtr = &child;
 
 	std::cout << std::endl;
 	animalPtr->makeSound();
-	dogPtr->makeSound();
+	childPtr->makeSound();
 
 	std::cout << std::endl;
 	std::cout << YELLOW "reference" RESET << std::endl;
-	S & animalRef = animal;
-	S & dogRef = dog;
+	Animal & animalRef = animal;
+	Animal & childRef = child;
 
 	std::cout << std::endl;
 	animalRef.makeSound();
-	dogRef.makeSound();
+	childRef.makeSound();
 }
 
 #endif

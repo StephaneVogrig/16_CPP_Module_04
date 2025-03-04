@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 01:18:57 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 15:36:31 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,4 @@ Cat & Cat::operator = (const Cat & toAssign)
 void Cat::makeSound(void) const
 {
 	std::cout << GREY "The " RESET << _type << GREY " meows" RESET << std::endl;
-}
-
-/* test ----------------------------------------------------------------------*/
-
-void Cat::test(void)
-{
-	displaySection("test Cat");
-
-	test_constructor<Cat>();
-	test_new<Cat>();
-	test_array<Cat>();
-	test_copy<Cat>();
-	test_makeSound<Cat>();
-	test_virtual<Animal, Cat>();
 }

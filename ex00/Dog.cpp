@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 01:16:03 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 15:33:19 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,4 @@ Dog & Dog::operator = (const Dog & toAssign)
 void Dog::makeSound(void) const
 {
 	std::cout << GREY "The " RESET << _type << GREY " barks" RESET << std::endl;
-}
-
-/* test ----------------------------------------------------------------------*/
-
-void Dog::test(void)
-{
-	displaySection("test Dog");
-
-	test_constructor<Dog>();
-	test_new<Dog>();
-	test_array<Dog>();
-	test_copy<Dog>();
-	test_makeSound<Dog>();
-	test_virtual<Animal, Dog>();
 }

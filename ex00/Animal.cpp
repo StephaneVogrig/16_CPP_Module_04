@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 01:08:32 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 15:32:05 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,4 @@ std::string Animal::getType(void) const
 void Animal::makeSound(void) const
 {
 	std::cout << GREY "The " RESET << _type << GREY " make a strange sound... " RESET << std::endl;
-}
-
-/* test ----------------------------------------------------------------------*/
-
-void Animal::test(void)
-{
-	displaySection("test Animal");
-
-	test_constructor<Animal>();
-	test_new<Animal>();
-	test_array<Animal>();
-	test_copy<Animal>();
-	test_makeSound<Animal>();
 }

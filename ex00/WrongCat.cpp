@@ -47,17 +47,3 @@ void WrongCat::makeSound(void) const
 {
 	std::cout << GREY "The " RESET << _type << GREY " meows" RESET << std::endl;
 }
-
-/* test ----------------------------------------------------------------------*/
-
-void WrongCat::test(void)
-{
-	displaySection("test WrongCat");
-
-	test_constructor<WrongCat>();
-	test_new<WrongCat>();
-	test_array<WrongCat>();
-	test_copy<WrongCat>();
-	test_makeSound<WrongCat>();
-	test_virtual<WrongAnimal, WrongCat>();
-}

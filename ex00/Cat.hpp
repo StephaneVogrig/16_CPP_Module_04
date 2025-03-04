@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 00:45:36 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 15:48:46 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CAT_HPP
 
 # include <iostream>
-# include <string>
 # include "Animal.hpp"
 # include "utils.hpp"
 
@@ -30,8 +29,6 @@ class Cat : public Animal
 		Cat & operator = (const Cat & toAssign);
 
 		void makeSound(void) const;
-
-		static void test(void);
 
 };
 

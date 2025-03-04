@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:44:07 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:45:39 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 16:57:38 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,18 @@ void test_Animal(void)
 	test_array<Animal>();
 	test_copy<Animal>();
 	test_makeSound<Animal>();
+	{
+		displaySubtest("Assignation");
+		Animal	animal;
+		Cat		cat;
+
+		std::cout << std::endl;
+		std::cout << "animal: " << animal << std::endl;
+		animal = cat;
+		std::cout << "animal: " << animal << std::endl;
+
+		std::cout << std::endl;
+	}
 }
 
 void test_Dog(void)
@@ -94,6 +106,18 @@ void test_WrongAnimal(void)
 	test_array<WrongAnimal>();
 	test_copy<WrongAnimal>();
 	test_makeSound<WrongAnimal>();
+	{
+		displaySubtest("Assignation");
+		WrongAnimal	animal;
+		WrongCat	cat;
+
+		std::cout << std::endl;
+		std::cout << "animal: " << animal << std::endl;
+		animal = cat;
+		std::cout << "animal: " << animal << std::endl;
+
+		std::cout << std::endl;
+	}
 }
 
 void test_WrongCat(void)

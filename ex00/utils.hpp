@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 19:29:35 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:51:54 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 16:09:49 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,6 @@ void test_constructor(void)
 	std::cout << std::endl;
 
 	T object;
-}
-
-template <typename T>
-void test_new(void)
-{
-	displaySubtest("new");
-
-	T * heap = new T();
-	delete heap;
 }
 
 template <typename T>

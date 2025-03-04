@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 00:49:32 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 01:20:04 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,60 +66,13 @@ void WrongAnimal::makeSound(void) const
 
 /* test ----------------------------------------------------------------------*/
 
-static void test_constructor(void)
-{
-	displaySubtest("default constructor");
-	WrongAnimal wrongAnimal;
-}
-
-static void test_new(void)
-{
-	displaySubtest("new");
-	WrongAnimal * heap = new WrongAnimal();
-	delete heap;
-}
-
-static void test_array(void)
-{
-	displaySubtest("Array");
-	WrongAnimal array[5];
-}
-
-static void test_copy(void)
-{
-	displaySubtest("copy constructor");
-
-	std::cout << YELLOW "Create a Animal" RESET << std::endl;
-	WrongAnimal * original = new WrongAnimal();
-
-	std::cout << std::endl;
-	std::cout << YELLOW "Create a Animal by copy" RESET << std::endl;
-	WrongAnimal copy(*original);
-
-	std::cout << std::endl;
-	std::cout << YELLOW "Delete original" RESET << std::endl;
-	delete original;
-
-	std::cout << std::endl;
-	std::cout << YELLOW "copy content : " RESET << copy << std::endl;
-
-	std::cout << std::endl;
-}
-
-static void test_makeSound(void)
-{
-	displaySubtest("make sound");
-	WrongAnimal wrongAnimal;
-	wrongAnimal.makeSound();
-}
-
 void WrongAnimal::test(void)
 {
 	displaySection("test WrongAnimal");
 
-	test_constructor();
-	test_new();
-	test_array();
-	test_copy();
-	test_makeSound();
+	test_constructor<WrongAnimal>();
+	test_new<WrongAnimal>();
+	test_array<WrongAnimal>();
+	test_copy<WrongAnimal>();
+	test_makeSound<WrongAnimal>();
 }

@@ -6,13 +6,13 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 19:31:06 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 00:45:51 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 01:01:37 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "utils.hpp"
 
-void displaySubtest(std::string const & title)
+void displaySubtest(const std::string & title)
 {
 	int width = 80;
 	int padding = (width - 2 - title.length()) / 2;
@@ -23,7 +23,7 @@ void displaySubtest(std::string const & title)
 	std::cout << RESET << std::endl;
 }
 
-void displaySection(std::string title)
+void displaySection(const std::string & title)
 {
 	std::cout << std::endl;
 	int width = 80;

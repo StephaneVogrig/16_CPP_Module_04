@@ -14,10 +14,9 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-WrongCat::WrongCat(void)
+WrongCat::WrongCat(void) : WrongAnimal("wrongCat")
 {
 	std::cout << CYAN "WrongCat default constructor called : " RESET << *this << std::endl;
-	_type = "wrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat & toCopy) : WrongAnimal(toCopy)

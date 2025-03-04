@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:49:00 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 16:00:35 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongAnimal
 {
 	public:
 
-		WrongAnimal(void);
+		WrongAnimal(const std::string & type = "wrongAnimal");
 		WrongAnimal(const WrongAnimal & toCopy);
 
 		virtual ~WrongAnimal(void);
@@ -39,6 +39,5 @@ class WrongAnimal
 };
 
 std::ostream & operator << (std::ostream & os, const WrongAnimal & wrongAnimal);
-
 
 #endif

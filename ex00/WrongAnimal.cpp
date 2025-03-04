@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:40:24 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 16:01:46 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-WrongAnimal::WrongAnimal(void) : _type("wrongAnimal")
+WrongAnimal::WrongAnimal(const std::string & type) : _type(type)
 {
 	std::cout << CYAN "WrongAnimal default constructor called : " RESET;
 	std::cout << *this << CYAN " is created " RESET << std::endl;
@@ -51,6 +51,8 @@ std::ostream & operator << (std::ostream & os, const WrongAnimal & wrongAnimal)
 	os << YELLOW "animal type:" RESET << wrongAnimal.getType();
 	return (os);
 }
+
+/* getter --------------------------------------------------------------------*/
 
 std::string WrongAnimal::getType(void) const
 {

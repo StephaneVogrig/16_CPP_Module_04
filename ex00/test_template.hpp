@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:26:02 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 17:31:04 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 18:26:41 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TEST_TEMPLATE_HPP
 
 #include <iostream>
+#include <string>
 # include "utils.hpp"
 
 template <typename T>
@@ -117,6 +118,41 @@ void test_virtual(void)
 	std::cout << std::endl;
 	animalRef.makeSound();
 	childRef.makeSound();
+}
+
+template <typename Animal, typename Cat>
+void test_Animal(const std::string & testName)
+{
+	displaySection(testName);
+
+	test_constructor<Animal>();
+	test_array<Animal>();
+	test_copy<Animal>();
+	test_makeSound<Animal>();
+	{
+		displaySubtest("Assignation");
+		Animal	animal;
+		Cat		cat;
+
+		std::cout << std::endl;
+		std::cout << "animal: " << animal << std::endl;
+		animal = cat;
+		std::cout << "animal: " << animal << std::endl;
+
+		std::cout << std::endl;
+	}
+}
+
+template <typename Animal, typename Type>
+void test_AnimalType(const std::string & testName)
+{
+	displaySection(testName);
+
+	test_constructor<Type>();
+	test_array<Type>();
+	test_copy<Type>();
+	test_makeSound<Type>();
+	test_virtual<Animal, Type>();
 }
 
 #endif

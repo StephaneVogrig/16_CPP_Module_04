@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:44:07 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 16:57:38 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/04 17:28:49 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "utils.hpp"
+#include "test_template.hpp"
 
 void test42(void)
 {

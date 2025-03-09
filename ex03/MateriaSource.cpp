@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 02:00:18 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/09 19:07:54 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 23:07:46 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 MateriaSource::MateriaSource(void)
 {
-	// std::cout << CYAN "MateriaSource constructor is called" RESET << std::endl;
 	for (int i = 0; i < _inventorySize; ++i)
 		_inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource & toCopy)
 {
-	// std::cout << CYAN "MateriaSource constructor by copy is called" RESET << std::endl;
 	for (int i = 0; i < _inventorySize; ++i)
 	{
 		if (toCopy._inventory[i])
@@ -33,7 +31,6 @@ MateriaSource::MateriaSource(const MateriaSource & toCopy)
 
 MateriaSource::~MateriaSource(void)
 {
-	// std::cout << BLUE "MateriaSource destructor is called" RESET << std::endl;
 	for (int i = 0; i < _inventorySize; ++i)
 		delete _inventory[i];
 }
@@ -65,8 +62,6 @@ void MateriaSource::learnMateria(AMateria * newMateria)
 	{
 		if (_inventory[i] == NULL)
 		{
-			// std::cout	<< BLUE "Materia Source learn Materia " RESET
-			// 			<< *newMateria << std::endl;
 			_inventory[i] = newMateria;
 			break ;
 		}

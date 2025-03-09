@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:48:31 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/09 22:46:21 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 23:05:31 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 Character::Character(const std::string & name) : _name(name)
 {
-	// std::cout << CYAN "Character " RESET << _name << CYAN " is created" RESET << std::endl;
 	for (int i = 0; i < _inventorySize; ++i)
 		_inventory[i] = NULL;
 }
 
 Character::Character(const Character & toCopy) : _name(toCopy._name)
 {
-	// std::cout << CYAN "Character " RESET << _name << CYAN " is created" RESET << std::endl;
 	for (int i = 0; i < _inventorySize; ++i)
 	{
 		if (toCopy._inventory[i])
@@ -53,7 +51,6 @@ Character & Character::operator = (const Character & toAssign)
 
 Character::~Character(void)
 {
-	// std::cout << BLUE "Character " RESET << _name << CYAN " is destroyed" RESET << std::endl;
 	for (int i = 0; i < _inventorySize; ++i)
 		delete _inventory[i];
 }

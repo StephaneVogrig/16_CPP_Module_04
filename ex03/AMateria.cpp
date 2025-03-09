@@ -6,26 +6,20 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 21:57:34 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/09 19:08:08 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 23:05:54 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria(std::string const & type) : _type(type)
-{
-	// std::cout << CYAN "AMateria " RESET << _type << CYAN " is created" RESET << std::endl;
-}
+{}
 
 AMateria::AMateria(const AMateria & materia) : _type(materia._type)
-{
-	// std::cout << CYAN "AMateria " RESET << _type << CYAN " is created" RESET << std::endl;
-}
+{}
 
 AMateria::~AMateria()
-{
-	// std::cout << BLUE "AMateria " RESET << _type << BLUE " is destroyed" RESET << std::endl;
-}
+{}
 
 AMateria & AMateria::operator = (const AMateria & toAssign)
 {

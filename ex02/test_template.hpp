@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:26:02 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 19:15:23 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/07 19:46:12 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,36 +88,36 @@ void test_makeSound(void)
 	instance.makeSound();
 }
 
-template <typename Animal, typename Child>
+template <typename Animal, typename Type>
 void test_virtual(void)
 {
 	displaySubtest("virtual");
 
-	Animal * animalBase = new Child();
+	Animal * animalBase = new Type();
 	animalBase->makeSound();
 	delete animalBase;
 
 	std::cout << std::endl;
-	Animal animal;
-	Child child;
+	// Animal animal;
+	Type type;
 
 	std::cout << std::endl;
 	std::cout << YELLOW "pointer" RESET << std::endl;
-	Animal * animalPtr = &animal;
-	Animal * childPtr = &child;
+	// Animal * animalPtr = &animal;
+	Animal * typePtr = &type;
 
 	std::cout << std::endl;
-	animalPtr->makeSound();
-	childPtr->makeSound();
+	// animalPtr->makeSound();
+	typePtr->makeSound();
 
 	std::cout << std::endl;
 	std::cout << YELLOW "reference" RESET << std::endl;
-	Animal & animalRef = animal;
-	Animal & childRef = child;
+	// Animal & animalRef = animal;
+	Animal & typeRef = type;
 
 	std::cout << std::endl;
-	animalRef.makeSound();
-	childRef.makeSound();
+	// animalRef.makeSound();
+	typeRef.makeSound();
 }
 
 template <typename Animal, typename Cat>

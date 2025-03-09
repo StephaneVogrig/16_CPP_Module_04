@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/07 19:04:45 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 17:07:46 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
 # include "utils.hpp"
 
-class Animal
+class AAnimal
 {
 	public:
 
-		Animal(const std::string & type = "animal");
-		Animal(const Animal & toCopy);
+		AAnimal(const std::string & type = "animal");
+		AAnimal(const AAnimal & toCopy);
 
-		virtual ~Animal(void);
+		virtual ~AAnimal(void);
 
-		Animal & operator = (const Animal & toAssign);
+		AAnimal & operator = (const AAnimal & toAssign);
 
 		std::string getType(void) const;
 
@@ -38,6 +38,6 @@ class Animal
 
 };
 
-std::ostream & operator << (std::ostream & os, const Animal & animal);
+std::ostream & operator << (std::ostream & os, const AAnimal & animal);
 
 #endif

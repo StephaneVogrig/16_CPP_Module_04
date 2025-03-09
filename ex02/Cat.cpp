@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 19:16:14 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 17:17:32 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-Cat::Cat(void) : Animal("cat"), _brain(new Brain())
+Cat::Cat(void) : AAnimal("cat"), _brain(new Brain())
 {
 	std::cout << CYAN "Cat default constructor called : " RESET << *this << std::endl;
 }
 
-Cat::Cat(const Cat & toCopy) : Animal(toCopy), _brain(new Brain(*toCopy._brain))
+Cat::Cat(const Cat & toCopy) : AAnimal(toCopy), _brain(new Brain(*toCopy._brain))
 {
 	std::cout << CYAN "Cat copy constructor called " RESET << *this << std::endl;
 }
@@ -37,7 +37,7 @@ Cat::~Cat(void)
 Cat & Cat::operator = (const Cat & toAssign)
 {
 	std::cout << PURPLE "Cat assignment operator called " RESET << *this << std::endl;
-	Animal::operator = (toAssign);
+	AAnimal::operator = (toAssign);
 	*_brain = *toAssign._brain;
 	return (*this);
 }

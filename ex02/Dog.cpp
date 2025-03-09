@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:41:40 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 19:16:23 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 17:17:21 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 /* constructor ---------------------------------------------------------------*/
 
-Dog::Dog(void) : Animal("dog"), _brain(new Brain())
+Dog::Dog(void) : AAnimal("dog"), _brain(new Brain())
 {
 	std::cout << CYAN "Dog default constructor called : " RESET << *this << std::endl;
 }
 
-Dog::Dog(const Dog & toCopy) : Animal(toCopy), _brain(new Brain(*toCopy._brain))
+Dog::Dog(const Dog & toCopy) : AAnimal(toCopy), _brain(new Brain(*toCopy._brain))
 {
 	std::cout << CYAN "Dog copy constructor called " RESET << *this << std::endl;
 }
@@ -37,7 +37,7 @@ Dog::~Dog(void)
 Dog & Dog::operator = (const Dog & toAssign)
 {
 	std::cout << PURPLE "Dog assignment operator called " RESET << *this << std::endl;
-	Animal::operator = (toAssign);
+	AAnimal::operator = (toAssign);
 	*_brain = *toAssign._brain;
 	return (*this);
 }

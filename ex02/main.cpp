@@ -6,12 +6,12 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:44:07 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/07 19:44:24 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/09 17:17:01 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -25,7 +25,7 @@
 void test42(void)
 {
 	displaySection("test 42");
-	Animal * animals[10];
+	AAnimal * animals[10];
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -45,8 +45,8 @@ void test42(void)
 	}
 
 	std::cout << std::endl;
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 	
 	i->makeSound();
 	j->makeSound();
@@ -59,7 +59,7 @@ void test42Wrong(void)
 {
 	displaySection("test 42 Wrong");
 	const WrongAnimal* meta = new WrongAnimal();
-	const Animal* j = new Dog();
+	const AAnimal* j = new Dog();
 	const WrongAnimal* i = new WrongCat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -97,8 +97,8 @@ int main(void)
 	test42Wrong();
 
 	// test_Animal<Animal, Cat>("test Animal");
-	testBrain_AnimalType<Animal, Dog>("test Dog");
-	testBrain_AnimalType<Animal, Cat>("test Cat");
+	testBrain_AnimalType<AAnimal, Dog>("test Dog");
+	testBrain_AnimalType<AAnimal, Cat>("test Cat");
 
 	test_Animal<WrongAnimal, WrongCat>("test WrongAnimal");
 	test_AnimalType<WrongAnimal, WrongCat>("test WrongCat");

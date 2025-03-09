@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:35:56 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 15:32:11 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/07 19:04:45 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Animal
 
 		std::string getType(void) const;
 
-		virtual void makeSound(void) const;
+		virtual void makeSound(void) const = 0;
 
 	protected:
 

@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:44:07 by svogrig           #+#    #+#             */
-/*   Updated: 2025/03/04 19:45:40 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/03/07 19:44:24 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void test42(void)
 	std::cout << std::endl;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	
-	// i->addIdea("i'm a cat");
 	
 	i->makeSound();
 	j->makeSound();
@@ -98,12 +96,12 @@ int main(void)
 	test42();
 	test42Wrong();
 
-	test_Animal<Animal, Cat>("test Animal");
+	// test_Animal<Animal, Cat>("test Animal");
 	testBrain_AnimalType<Animal, Dog>("test Dog");
 	testBrain_AnimalType<Animal, Cat>("test Cat");
 
-	// test_Animal<WrongAnimal, WrongCat>("test WrongAnimal");
-	// test_AnimalType<WrongAnimal, WrongCat>("test WrongCat");
+	test_Animal<WrongAnimal, WrongCat>("test WrongAnimal");
+	test_AnimalType<WrongAnimal, WrongCat>("test WrongCat");
 
 	test_Brain();
 
